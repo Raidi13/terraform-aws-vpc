@@ -1,20 +1,21 @@
+
 Terraform AWS VPC Module Customised
 
-. VPC
-. Internet Gateway associated with VPC
-. 2 Public Subnets
-. 2 Private Subnets
-. 2 Database Subnets
-. Database subnet group
-. EIP
-. NAT Gateway
-. Public Route table
-. Private Route table
-. Database Route table
-. Routes
-. Route table associations with subnets
-. Peering with default VPC(if Required)
-. Peering routes in acceptor and requestor route tables
+* VPC
+* Internet Gateway associated with VPC
+* 2 Public Subnets
+* 2 Private Subnets
+* 2 Database Subnets
+* Database subnet group
+* EIP
+* NAT Gateway
+* Public Route table
+* Private Route table
+* Database Route table
+* Routes
+* Route table associations with subnets
+* Peering with default VPC(if Required)
+* Peering routes in acceptor and requestor route tables
 
 ## Inputs 
 
