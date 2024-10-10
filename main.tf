@@ -66,6 +66,20 @@ resource "aws_subnet" "database" {
     }
   )
 }
+# DB subnet group for rds
+resource "aws_db_subnet_group" "default" {
+  name       = local.resource_name
+  subnet_ids = aws_subnet.database[*].id
+
+  tags = merge(
+    var.common_tags,
+    var.db_subnet_group_tags,
+    {
+        Name = local.resource_name
+    }
+  )
+}
+
  #internet  NAT gateway creating
 resource "aws_eip" "nat" {
   domain = "vpc"
@@ -110,7 +124,7 @@ resource "aws_route_table" "public" {
     }
     )
 }
-
+# database route
   resource "aws_route_table" "database" {
   vpc_id = aws_vpc.main.id
  tags = merge (
