@@ -1,5 +1,7 @@
 ![vpc](https://github.com/user-attachments/assets/a4b2c023-09d2-42ed-86ae-592eb56cfb4b)
-Terraform AWS VPC Module Customised
+
+# Terraform AWS VPC Module Customised
+This module is going to create the following resources. for HA we are going to get first 2 Az.
 
 * VPC
 * Internet Gateway associated with VPC
