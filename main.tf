@@ -11,6 +11,7 @@ resource "aws_vpc" "main" {
   )
 }
 
+
 resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
 
@@ -22,7 +23,7 @@ resource "aws_internet_gateway" "main" {
    }
   )
 }
-#subnets using count 2
+ #subnets using count 2
 
 resource "aws_subnet" "public" {
   count       = length(var.public_subnet_cidrs)
@@ -67,6 +68,7 @@ resource "aws_subnet" "database" {
     }
   )
 }
+
 # DB subnet group for rds
 resource "aws_db_subnet_group" "default" {
   name       = local.resource_name
@@ -103,6 +105,7 @@ resource "aws_nat_gateway" "main" {
   # on the Internet Gateway for the VPC.
   depends_on = [aws_internet_gateway.main]
 }
+
  # public route table
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
@@ -141,7 +144,7 @@ resource "aws_route_table" "public" {
 resource "aws_route" "public" {
   route_table_id            = aws_route_table.public.id
   destination_cidr_block    = "0.0.0.0/0"
- gateway_id  = aws_internet_gateway.main.id
+ gateway_id  = aws_internet_gateway.main.id 
 }
 
 resource "aws_route" "private_nat" {
