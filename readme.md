@@ -1,6 +1,6 @@
 ![vpc](https://github.com/user-attachments/assets/a4b2c023-09d2-42ed-86ae-592eb56cfb4b)
 
-# Terraform AWS VPC Module Customised
+# Terraform AWS VPC Module 
 This module is going to create the following resources. for HA we are going to get first 2 Az.
 
 * VPC
@@ -17,7 +17,7 @@ This module is going to create the following resources. for HA we are going to g
 * Routes
 * Route table associations with subnets
 * Peering with default VPC(if Required)
-* Peering routes in acceptor and requestor route tables
+* Peering routes in acceptor and requestor   route tables
 
 ## Inputs 
 
